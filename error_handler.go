@@ -1,24 +1,24 @@
 package vader
 
-// Returns an error handler with group of repo
+// NewRepoErrorHandler returns an error handler with group of repo
 func NewRepoErrorHandler() *errorHandler {
 	group := repository
 	return &errorHandler{group}
 }
 
-// Returns an error handler with group of service
+// NewServiceErrorHandler returns an error handler with group of service
 func NewServiceErrorHandler() *errorHandler {
 	group := service
 	return &errorHandler{group}
 }
 
-// Returns an error handler with group of domain
+// NewDomainErrorHandler returns an error handler with group of domain
 func NewDomainErrorHandler() *errorHandler {
 	group := domain
 	return &errorHandler{group}
 }
 
-// Returns an error handler with group of handler
+// NewHandlerErrorHandler returns an error handler with group of handler
 func NewHandlerErrorHandler() *errorHandler {
 	group := handler
 	return &errorHandler{group}
@@ -75,5 +75,14 @@ func (eh *errorHandler) AlreadyExists(msg string) Error {
 	e.msg = msg
 	e.group = eh.group
 	e.kind = alreadyExists
+	return e
+}
+
+func (eh *errorHandler) UnprocessableEntity(msg string) Error {
+	e := new(err)
+	e.code = unprocessableEntityCode
+	e.msg = msg
+	e.group = eh.group
+	e.kind = unprocessableEntity
 	return e
 }

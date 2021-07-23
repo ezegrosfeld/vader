@@ -12,16 +12,18 @@ const (
 	generic = "generic"
 
 	//HTTP Errors
-	notFound      = "notFound"
-	internal      = "internal"
-	badRequest    = "badRequest"
-	unauthorized  = "unauthorized"
-	alreadyExists = "alreadyExists"
+	notFound            = "notFound"
+	internal            = "internal"
+	badRequest          = "badRequest"
+	unauthorized        = "unauthorized"
+	alreadyExists       = "alreadyExists"
+	unprocessableEntity = "unprocessableEntity"
 
 	// HTTP Codes
-	notFoundCode      = 404
-	internalCode      = 500
-	badRequestCode    = 400
-	unauthorizedCode  = 401
-	alreadyExistsCode = 409
+	notFoundCode            = 404
+	internalCode            = 500
+	badRequestCode          = 400
+	unauthorizedCode        = 401
+	alreadyExistsCode       = 409
+	unprocessableEntityCode = 422
 )

@@ -1,6 +1,6 @@
 package vader
 
-// Interface of the error
+// Error interface
 type Error interface {
 	// Error returns the string representation of the error
 	Error() string
@@ -42,7 +42,7 @@ type err struct {
 	code int
 }
 
-// Handler with pre defined group
+// ErrorHandler has a pre defined group
 type ErrorHadler interface {
 	// Returns a generic error with the group of the handler
 	Generic(msg string) Error
@@ -56,6 +56,8 @@ type ErrorHadler interface {
 	Unauthorized(msg string) Error
 	// Returns an error with the group of the handler and kind of alredy exists
 	AlreadyExists(msg string) Error
+	// Returns an error with the group of the handler and kind of unprocessable entity
+	UnprocessableEntity(msg string) Error
 }
 
 // Struct of handler containing gruop

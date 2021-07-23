@@ -40,6 +40,10 @@ func (e *err) IsAlredyExists() bool {
 	return e.code == alreadyExistsCode
 }
 
+func (e *err) IsUnprocessableEntity() bool {
+	return e.code == unprocessableEntityCode
+}
+
 func (e *err) GetGroup() string {
 	return e.group
 }
