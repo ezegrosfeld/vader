@@ -58,6 +58,10 @@ type ErrorHadler interface {
 	AlreadyExists(msg string) Error
 	// Returns an error with the group of the handler and kind of unprocessable entity
 	UnprocessableEntity(msg string) Error
+	// Returns an error with the group of the handler and kind of forbidden
+	Forbidden(msg string) Error
+	// Returns an error with the group of the handler and kind of conflict
+	Conflict(msg string) Error
 }
 
 // Struct of handler containing gruop

@@ -42,7 +42,7 @@ func (eh *errorHandler) NotFound(msg string) Error {
 	return e
 }
 
-func (eh *errorHandler) InternalError(msg string) Error {
+func (eh *errorHandler) Internal(msg string) Error {
 	e := new(err)
 	e.code = internalCode
 	e.msg = msg
@@ -84,5 +84,23 @@ func (eh *errorHandler) UnprocessableEntity(msg string) Error {
 	e.msg = msg
 	e.group = eh.group
 	e.kind = unprocessableEntity
+	return e
+}
+
+func (eh *errorHandler) Forbidden(msg string) Error {
+	e := new(err)
+	e.code = forbiddenCode
+	e.msg = msg
+	e.group = eh.group
+	e.kind = forbidden
+	return e
+}
+
+func (eh *errorHandler) Conflict(msg string) Error {
+	e := new(err)
+	e.code = conflictCode
+	e.msg = msg
+	e.group = eh.group
+	e.kind = conflict
 	return e
 }

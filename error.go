@@ -44,6 +44,18 @@ func (e *err) IsUnprocessableEntity() bool {
 	return e.code == unprocessableEntityCode
 }
 
+func (e *err) IsUnauthorized() bool {
+	return e.code == unauthorizedCode
+}
+
+func (e *err) IsForbidden() bool {
+	return e.code == forbiddenCode
+}
+
+func (e *err) IsConflict() bool {
+	return e.code == conflictCode
+}
+
 func (e *err) GetGroup() string {
 	return e.group
 }

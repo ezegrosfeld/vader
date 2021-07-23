@@ -19,26 +19,38 @@ func BadRequest(msg string) Error {
 }
 
 // InternalError returns an internal error
-func InternalError(msg string) Error {
+func Internal(msg string) Error {
 	e := err{msg: msg, code: internalCode, group: generic, kind: internal}
 	return &e
 }
 
 // AlredyExistsError returns an alredy exists error
-func AlredyExistsError(msg string) Error {
+func AlredyExists(msg string) Error {
 	e := err{msg: msg, code: alreadyExistsCode, group: generic, kind: alreadyExists}
 	return &e
 }
 
 // UnauthorizedError returns an unauthorized error
-func UnauthorizedError(msg string) Error {
+func Unauthorized(msg string) Error {
 	e := err{msg: msg, code: unauthorizedCode, group: generic, kind: unauthorized}
 	return &e
 }
 
 // UnprocessableEntityError returns an unprocessable entity error
-func UnprocessableEntityError(msg string) Error {
+func UnprocessableEntity(msg string) Error {
 	e := err{msg: msg, code: unprocessableEntityCode, group: generic, kind: unprocessableEntity}
+	return &e
+}
+
+// Forbidden returns a forbidden error
+func Forbidden(msg string) Error {
+	e := err{msg: msg, code: forbiddenCode, group: generic, kind: forbidden}
+	return &e
+}
+
+// Conflict returns a conflict error
+func Conflict(msg string) Error {
+	e := err{msg: msg, code: conflictCode, group: generic, kind: conflict}
 	return &e
 }
 

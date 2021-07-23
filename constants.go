@@ -18,6 +18,8 @@ const (
 	unauthorized        = "unauthorized"
 	alreadyExists       = "alreadyExists"
 	unprocessableEntity = "unprocessableEntity"
+	forbidden           = "forbidden"
+	conflict            = "conflict"
 
 	// HTTP Codes
 	notFoundCode            = 404
@@ -26,4 +28,6 @@ const (
 	unauthorizedCode        = 401
 	alreadyExistsCode       = 409
 	unprocessableEntityCode = 422
+	forbiddenCode           = 403
+	conflictCode            = 409
 )
